@@ -1,0 +1,8 @@
+*.swp
+*.swo
+.sass-cache
+.local
+*.DS_Store
+node_modules
+.tmp
+bower_components
