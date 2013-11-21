@@ -12,6 +12,19 @@ angular.module('mookApp', ['ngRoute','ngResource'])
           }]
         }
       })
+      .when('/:albumId', {
+        templateUrl: 'views/show.html',
+        controller: 'AlbumCtrl',
+        resolve: {
+          album: ['Imgur', function(Imgur, $route) {
+            return Imgur.list('simook').then(function(attributes) {
+              return _.find(attributes.filtered, function(attribute) {
+                return attribute.dim.dimension.name === $route.current.params.attributeId;
+              });
+            });;
+          }]
+        }
+      })
       .otherwise({
         redirectTo: '/'
       });
