@@ -1,9 +1,83 @@
-<div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+<div id="headerwrap">
+	<div class="container">
+		<div class="col-lg-8">
+		<h1>I'm a UX designer & Front-End engineer in Portland, Oregon.</h1>
+		</div>
+		<div class="col-lg-4">
+		</div>
+	</div>
+</div>
+<div class="container about">
+	<div class="col-lg-8 col-lg-offset-2">
+		<h3>About Kyle Simukka</h3>
+		<h5>UX DESIGNER & FRONT-END ENGINEER</h5>
+		<hr>
+		<br>
+		<h4>By embodying a cross-functional developer and designer role, I strive to build great user-centered web applications.<br/>-</h4>
+		<p>Most importantly and above all, I will put the needs of the user first over my own needs as a developer and designer. Great UI, progressive enhancement, unobtrusive javascript are my tools.</p>
+		<p></p>
+	</div>
+</div>
+<section id="portfolio"></section>
+<div id="portfoliowrap">
+	<div class="container">
+		<h3>I Build Cool Stuff</h3>
+		<br>
+		<br>
+		<div class="row">
+			<div class="col-md-3 project" ng-repeat="project in portfolio">
+		    <a class="grid mask" href="#/{{project.data.id}}" modal="project">
+					<figure>
+						<img ng-cloak ng-show="project.data.cover" class="img-responsive" ng-src="http://i.imgur.com/{{project.data.cover}}l.jpg" alt="{{project.data.title}}">
+						<figcaption>
+							<h5>{{project.data.title}}</h5>
+						</figcaption>
+					</figure>
+		    </a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 about">
+			<h3>With Awesome Technology</h3>
+			<h5>THE LATEST AND GREATEST</h5>
+			<br>
+			<br>
+      <div class="accordion">
+        <div class="accordion-group">
+          <div class="accordion-heading">
+            <a class="accordion-toggle">
+             	<plus> + </plus> AngularJS, Bootstrap, and LESS
+            </a>
+          </div>
+          <div class="accordion-body collapse in">
+	          <div class="accordion-inner">
+	            <p>My tools of choice for any front-end.</p>
+						</div>
+		   		</div>
+        </div>
+        <div class="accordion-group">
+          <div class="accordion-heading">
+            <a class="accordion-toggle">
+             	<plus> + </plus> Scala, Ruby on Rails, and NodeJS
+            </a>
+          </div>
+          <div class="accordion-body collapse in">
+	          <div class="accordion-inner">
+	            <p>Back-ends I commonly integrate with. It's not unusual for me to contribute directly to the back-end.</p>
+						</div>
+		   		</div>
+        </div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footerwrap">
+	<div class="container">
+		<div class="col-lg-5">
+			<h3>kylesimuka@gmail.com</h3>
+		</div>
+	</div>
 </div>

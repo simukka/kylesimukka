@@ -1,10 +1,11 @@
 'use strict';
 
-angular.module('kylesimukkaApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+var app = angular.module('kylesimukkaApp');
+
+app.controller('MainCtrl', function ($scope, portfolio) {
+	$scope.portfolio = portfolio;
+});
+
+app.controller('ShowCtrl', function ($scope, project) {
+	$scope.project = project;
+});

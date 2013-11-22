@@ -1,0 +1,20 @@
+<div class="container about">
+	<div class="col-lg-8 col-lg-offset-2">
+		<h3>{{project.data.title}}</h3>
+		<hr>
+		<p>{{project.data.description}}</p>
+	</div>
+</div>
+<div id="portfoliowrap">
+	<div class="container-fluid">
+		<div class="row screenshot" ng-repeat="image in project.data.images">
+			<div class="col-lg-2">
+				<h4 ng-cloak ng-show="image.title">{{image.title}}</h4>
+				<h5 ng-cloak ng-show="image.description">{{image.description}}</h5>
+			</div>
+			<div class="col-lg-8">
+				<img src="http://imgur.com/{{image.id}}.png" />
+			</div>
+		</div>
+	</div>
+</div>
