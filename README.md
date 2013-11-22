@@ -1,21 +1,7 @@
-kylesimukka project
+http://kylesimukka.com project
 ===========
-designed and built in Portland, Oregon.
 
-##check it out at http://kylesimukka.com
-
-### built with
-* AngularJS
-* Bootstrap
-* Imgur
-* Grunt
-
-### hosted with
-* Amazon S3
-
-
-Hackathons are awesome, you are thrown a bunch of cool ideas, given a set number of hours to design and build, and have to present at the end. 
-Even though I've only participated in a select few, the concept behind hackathons has taken a new meaning when I approach many of my side projects now. 
+#####Hackathons are awesome, you are thrown a bunch of cool ideas, given a set number of hours to design and build, and then have to present. 
 
 The kylesimukka project is the result of a mini-hackathon I gave myself on November, 21, 2013. 
 
@@ -29,5 +15,13 @@ Now the more interesting part of this project is how one would modify and update
 
 Imgur is a great service for hosting images, but one feature they have is albums. Each album can contain any number of images, along with titles and descriptions. Bingo! Through the Imgur APIs, I'm able to get all the albums, the content for each album and images. This gave me the flexibility to dynamically manage my projects.
 
+----
 
+### built with
+* AngularJS
+* Bootstrap
+* Imgur
+* Grunt
 
+### hosted with
+* Amazon S3
