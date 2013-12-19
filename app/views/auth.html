@@ -1,0 +1,28 @@
+<div class="container about">
+	<div class="col-lg-6 col-lg-offset-3">
+		<h3>Login</h3>
+		<hr>
+	</div>
+</div>
+<div class="container">
+	<div class="col-lg-6 col-lg-offset-3">
+		<form role="form" ng-init="user = {}" ng-cloak ng-hide="auth.user">
+		  <div class="form-group">
+		    <input type="email" class="form-control" placeholder="Email" ng-model="user.email">
+		  </div>
+		  <div class="form-group">
+		    <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
+		  </div>
+		  <div class="checkbox">
+		    <label>
+		      <input type="checkbox" ng-model="user.remember"> Remember Me
+		    </label>
+		  </div>
+		  <button type="submit" class="btn btn-primary pull-right" ng-click="auth.$login('password', user)">Login</button>
+		</form>
+		<form ng-cloak ng-show="auth.user" class="text-center">
+			<p class="text-center">Welcome back {{auth.user.email}}!</p>
+			<button type="submit" class="btn btn-default" ng-click="auth.$logout()">Logout</button>
+		</form>
+	</div>
+</div>

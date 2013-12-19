@@ -1,0 +1,67 @@
+<div class="container about">
+	<div class="col-lg-8 col-lg-offset-2">
+		<h3>2013 Wishlist</h3>
+		<hr>
+		<p>Here's my wishlist for 2013. If you want to buy me something for the holiday season, I would be very grateful to receive anything from below.</p>
+		<div class="form-group" ng-cloak ng-show="auth.user">
+			<button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#addWishlistItem">Add</button>
+		</div>
+	</div>
+</div>
+<div id="portfoliowrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-3" ng-repeat="item in wishlist">
+		    <div class="thumbnail">
+		      <img ng-cloak ng-show="item.image" ng-src="{{item.image}}" alt="{{item.title}}">
+		      <div class="caption">
+		        <h4>{{item.title}}</h4>
+		        <p>$ {{item.price}}</p>
+		        	<a href="{{item.link}}" target="_blank" class="btn btn-primary btn-block" role="button">View</a>
+		        	<button class="btn btn-danger btn-block" ng-cloak ng-show="auth.user" ng-click="wishlist.$remove(item)">Remove</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="addWishlistItem" tabindex="-1" role="dialog" aria-hidden="true" ng-cloak ng-show="auth.user">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add a item to your wishlist</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" role="form" ng-init="item = {}">
+				  <div class="form-group">
+				    <div class="col-sm-12">
+				      <input type="text" class="form-control" placeholder="Item Title" ng-model="item.title">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="col-sm-6">
+				      <input type="url" class="form-control" placeholder="Link" ng-model="item.link">
+				    </div>
+				    <div class="col-sm-6 input-group">
+				    	<span class="input-group-addon">$</span>
+				      <input type="text" class="form-control" placeholder="0.00" ng-model="item.price">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="col-sm-6">
+				      <img src="{{item.image}}" class="img-thumbnail" />
+				    </div>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control" placeholder="Image" ng-model="item.image">
+				    </div>
+				  </div>
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="item = null">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="wishlist.$add(item); item = null;">Add Item</button>
+      </div>
+    </div>
+  </div>
+</div>

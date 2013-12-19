@@ -9,3 +9,12 @@ app.controller('MainCtrl', function ($scope, portfolio) {
 app.controller('ShowCtrl', function ($scope, project) {
 	$scope.project = project;
 });
+
+app.controller('WishCtrl', function ($scope, auth, wishlist) {
+	$scope.auth = auth;
+	$scope.wishlist = wishlist;
+});
+
+app.controller('AuthCtrl', function ($scope, auth) {
+	$scope.auth = auth;
+});

@@ -27,7 +27,28 @@ module.exports = function (grunt) {
   } catch (e) {}
 
   grunt.initConfig({
+    aws: grunt.file.readJSON('aws-keys.json'),
     yeoman: yeomanConfig,
+    aws_s3: {
+      options: {
+        accessKeyId: '<%= aws.AWSAccessKeyId %>', // Use the variables
+        secretAccessKey: '<%= aws.AWSSecretKey %>', // You can also use env variables
+        region: 'eu-west-2',
+        uploadConcurrency: 5, // 5 simultaneous uploads
+        downloadConcurrency: 5 // 5 simultaneous downloads
+      },
+      production: {
+        options: {
+          bucket: 'mook',
+          params: {
+            ContentEncoding: 'gzip' // applies to all the files!
+          }
+        },
+        files: [
+          {expand: true, cwd: 'dist', src: ['**'], dest: ''},
+        ]
+      }
+    },
     watch: {
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
@@ -339,5 +360,9 @@ module.exports = function (grunt) {
     'jshint',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('deploy', [
+    'aws_s3:production'
   ]);
 };
