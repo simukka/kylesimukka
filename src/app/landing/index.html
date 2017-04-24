@@ -1,0 +1,40 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Album example</h1>
+    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+    <p>
+      <a href="#" class="btn btn-primary">Main call to action</a>
+      <a href="#" class="btn btn-secondary">Secondary action</a>
+    </p>
+  </div>
+</section>
+
+<div class="projects text-muted">
+  <div class="container">
+
+    <div class="row">
+      <div class="card" ng-repeat="project in lCtrl.projects">
+        <svg width="356" height="280" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 356 280" preserveAspectRatio="none"><defs><style type="text/css">#holder_15b9bdd5fd4 text { fill:#AAAAAA;font-weight:bold;font-family:Arial, Helvetica, Open Sans, sans-serif, monospace;font-size:18pt } </style></defs><g id="holder_15b9bdd5fd4"><rect width="356" height="280" fill="#EEEEEE"></rect><g><text x="130.4609375" y="148.1">{{project}}</text></g></g></svg>
+
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="passions">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4" ng-repeat="passion in lCtrl.passions">
+        <div class="card">
+          <img class="svg-icon-forest svg-icon" aria-label="Forest illustration" />
+          <div class="card-block">
+            <h3 class="card-title text-center">Special title treatment</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

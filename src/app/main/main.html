@@ -1,0 +1,23 @@
+<nav class="navbar">
+  <a href="#">Gulp Angular</a>
+  <ul>
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a ng-href="#">About</a></li>
+    <li><a ng-href="#">Contact</a></li>
+  </ul>
+</nav>
+<header>
+  <div class="container">
+    <i class="gi gi-540-logo" id="logo"></i>
+    <h1 class="name">#GetShitDone</h1>
+    <div class="col" ng-repeat="thing in vm.awesomeThings">
+      <div class="panel">
+          <h2>{{thing.name}}</h2>
+          <a href="{{thing.url}}">{{thing.url}}</a>
+      </div>
+    </div>
+    <p>
+      Getting started with <a href="http://getbootstrap.com/getting-started/">Bootstrap</a>
+    </p>
+  </div>
+</header>
